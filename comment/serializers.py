@@ -1,20 +1,20 @@
 from rest_framework import serializers
-from .models import Comment, QuestionAnswer, CommentImage
+from .models import FeedbackModel, FAQsModel, FeedbackImageModel
 
 
-class CommentSerializer(serializers.ModelSerializer):
+class FeedbackSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Comment
+        model = FeedbackModel
         fields = '__all__'
 
 
-class CommentImageSerializer(serializers.ModelSerializer):
+class FeedbackImageSerializer(serializers.ModelSerializer):
     class Meta:
-        model = CommentImage
+        model = FeedbackImageModel
         fields = '__all__'
 
 
-class QuestionAnswerSerializer(serializers.ModelSerializer):
+class FAQsSerializer(serializers.ModelSerializer):
     class Meta:
-        model = QuestionAnswer
+        model = FAQsModel
         fields = '__all__'

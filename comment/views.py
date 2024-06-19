@@ -1,18 +1,18 @@
 from rest_framework import viewsets
-from .models import Comment, QuestionAnswer, CommentImage
-from .serializers import CommentSerializer, QuestionAnswerSerializer, CommentImageSerializer
+from .models import FeedbackModel, FAQsModel, FeedbackImageModel
+from .serializers import FeedbackSerializer, FAQsSerializer, FeedbackImageSerializer
 
 
-class CommentViewSet(viewsets.ModelViewSet):
-    queryset = Comment.objects.all()
-    serializer_class = CommentSerializer
+class FeedbackViewSet(viewsets.ModelViewSet):
+    queryset = FeedbackModel.objects.all()
+    serializer_class = FeedbackSerializer
 
 
-class QuestionAnswerViewSet(viewsets.ModelViewSet):
-    queryset = QuestionAnswer.objects.all()
-    serializer_class = QuestionAnswerSerializer
+class FAQsViewSet(viewsets.ModelViewSet):
+    queryset = FAQsModel.objects.all()
+    serializer_class = FAQsSerializer
 
 
-class CommentImageViewSet(viewsets.ModelViewSet):
-    queryset = CommentImage.objects.all()
-    serializer_class = CommentImageSerializer
+class FeedbackImageViewSet(viewsets.ModelViewSet):
+    queryset = FeedbackImageModel.objects.all()
+    serializer_class = FeedbackImageSerializer

@@ -5,12 +5,12 @@ User = get_user_model()
 
 
 class FeedbackModel(models.Model):
-    owner = models.ForeignKey(User, on_delete=models.CASCADE)
-    to_user = models.IntegerField()
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='Owner')
+    to_user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="User")
     msg = models.TextField()
     mark = models.IntegerField()
     created_at = models.DateField()
-    service = models.IntegerField()
+    service = models.ForeignKey(Service, on_delete=models.CASCADE, related_name='service')
 
     def __str__(self):
         return f'Comment {self.pk} on Service {self.service}'
@@ -33,6 +33,7 @@ class FeedbackImageModel(models.Model):
 class FAQsModel(models.Model):
     question = models.TextField()
     answer = models.TextField()
+    role = models.BooleanField(default=False)
 
     def __str__(self):
         return f'QuestionAnswer {self.pk}'

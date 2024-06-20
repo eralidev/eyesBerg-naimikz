@@ -20,7 +20,7 @@ class FeedbackModel(models.Model):
 
 
 class FeedbackImageModel(models.Model):
-    image = models.ImageField(upload_to='static/FeedbackImage/')
+    image = models.ImageField(upload_to='FeedbackImage/')
     comment = models.ForeignKey(FeedbackModel, related_name='images', on_delete=models.CASCADE)
 
     def __str__(self):
